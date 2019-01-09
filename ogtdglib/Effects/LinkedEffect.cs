@@ -1,7 +1,9 @@
-﻿using DuckGame;
+﻿using System.Reflection;
+using DuckGame;
 
 namespace ogtdglib.Effects
 {
+    [Obfuscation(Exclude = true, ApplyToMembers = false)]
     public abstract class LinkedEffect:Effect
     {
         private readonly Thing _linkThing;
@@ -21,6 +23,7 @@ namespace ogtdglib.Effects
             LinkedStep(_linkThing);
         }
 
+        [Obfuscation(Exclude = true)]
         protected abstract void LinkedStep(Thing linkThing);
     }
 }

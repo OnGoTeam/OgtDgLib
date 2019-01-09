@@ -1,7 +1,9 @@
-﻿using DuckGame;
+﻿using System.Reflection;
+using DuckGame;
 
 namespace ogtdglib.Effects
 {
+    [Obfuscation(Exclude = true, ApplyToMembers = false)]
     public sealed class StopEffect:LinkedEffect
     {
         private readonly float _x;
@@ -15,6 +17,7 @@ namespace ogtdglib.Effects
             _ttd = ttd;
         }
 
+        [Obfuscation(Exclude = false)]
         protected override void LinkedStep(Thing linkThing)
         {
             linkThing.hSpeed = 0f;

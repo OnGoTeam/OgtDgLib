@@ -4,12 +4,12 @@ using JetBrains.Annotations;
 namespace ogtdglib.Effects
 {
     [PublicAPI]
-    public sealed class Effector:Thing
+    internal sealed class Effector:Thing
     {
         public Effect ItsEffect;
         public StateBinding EffectBinding = new StateBinding(nameof(ItsEffect));
 
-        public Effector(Effect itsEffect)
+        internal Effector(Effect itsEffect)
         {
             ItsEffect = itsEffect;
             owner = ItsEffect.Owner;
@@ -20,7 +20,7 @@ namespace ogtdglib.Effects
             Step();
         }
 
-        public void Step()
+        private void Step()
         {
             ItsEffect.Step();
         }

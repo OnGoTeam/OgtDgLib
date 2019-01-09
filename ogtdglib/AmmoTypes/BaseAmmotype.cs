@@ -1,9 +1,11 @@
-﻿using DuckGame;
+﻿using System.Reflection;
+using DuckGame;
 using JetBrains.Annotations;
 
 namespace ogtdglib.AmmoTypes
 {
     [PublicAPI]
+    [Obfuscation(Exclude = true, ApplyToMembers = false)]
     public abstract class BaseAmmotype:AmmoType
     {
         private Nothing _nothing;
@@ -13,6 +15,7 @@ namespace ogtdglib.AmmoTypes
             if (_nothing is null) _nothing = new Nothing();
         }
 
+        [Obfuscation(Exclude = true)]
         protected string GetPath(string asset)
         {
             InitNothing();
