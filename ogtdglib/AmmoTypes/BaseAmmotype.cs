@@ -1,12 +1,13 @@
-﻿using System.Reflection;
-using DuckGame;
+﻿using DuckGame;
 using JetBrains.Annotations;
 
 namespace ogtdglib.AmmoTypes
 {
+    /// <summary>
+    /// AmmoType with GetPath
+    /// </summary>
     [PublicAPI]
-    [Obfuscation(Exclude = true, ApplyToMembers = false)]
-    public abstract class BaseAmmotype:AmmoType
+    public abstract class BaseAmmoType:AmmoType
     {
         private Nothing _nothing;
 
@@ -14,8 +15,12 @@ namespace ogtdglib.AmmoTypes
         {
             if (_nothing is null) _nothing = new Nothing();
         }
-
-        [Obfuscation(Exclude = true)]
+        
+        /// <summary>
+        /// Implements GetPath for AmmoType through Nothing.GetPath
+        /// </summary>
+        /// <param name="asset"></param>
+        /// <returns></returns>
         protected string GetPath(string asset)
         {
             InitNothing();
