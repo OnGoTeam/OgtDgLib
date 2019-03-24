@@ -9,11 +9,16 @@ namespace ogtdglib.AmmoTypes
     [PublicAPI]
     public abstract class BaseAmmoType : AmmoType
     {
-        private Nothing _nothing;
+        private readonly Thing _nothing;
 
-        private void InitNothing()
+
+        /// <summary>
+        /// BaseAmmoType for Mod mod
+        /// </summary>
+        /// <param name="mod"></param>
+        protected BaseAmmoType(Mod mod)
         {
-            if (_nothing is null) _nothing = new Nothing();
+            _nothing = new Nothing(mod);
         }
 
         /// <summary>
@@ -23,8 +28,7 @@ namespace ogtdglib.AmmoTypes
         /// <returns></returns>
         protected string GetPath(string asset)
         {
-            InitNothing();
-            return _nothing.GetPath(asset);
+            return (_nothing ?? throw new ModUndefinedException("Error occured while getting Nothing for Mod mod")).GetPath(asset);
         }
     }
 }

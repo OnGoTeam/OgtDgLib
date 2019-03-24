@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ogtdglib.csproj</id>
+    <version>0.1.1</version>
+    <authors>Timofey</authors>
+    <owners>Timofey</owners>
+    <projectUrl>https://github.com/timotheyca/ogtdglib</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>lib for DuckGame by PTA@OGT</description>
+    <releaseNotes>latest "Nothing" version</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>duckgame mod</tags>
+    <dependencies>
+      <dependency id="JetBrains.Annotations.2018.3.0" version="2018.3.0.0" />
+    </dependencies>
+  </metadata>
+</package>

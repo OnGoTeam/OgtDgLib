@@ -37,6 +37,9 @@
     <PlatformTarget>x86</PlatformTarget>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ogtdglib.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="JetBrains.Annotations, Version=2018.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.2018.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
@@ -56,6 +59,7 @@
     <Compile Include="src\Effects\LinkedEffect.cs" />
     <Compile Include="src\MaterialDot.cs" />
     <Compile Include="src\MaterialDotP.cs" />
+    <Compile Include="src\ModUndefinedException.cs" />
     <Compile Include="src\NoGun.cs" />
     <Compile Include="src\Nothing.cs" />
     <Compile Include="src\Effects\Effect.cs" />
@@ -65,6 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ogtdglib.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
