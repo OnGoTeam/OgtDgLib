@@ -4,10 +4,10 @@ using JetBrains.Annotations;
 namespace ogtdglib.Effects
 {
     [PublicAPI]
-    internal sealed class Effector:Thing
+    internal sealed class Effector : Thing
     {
-        public Effect ItsEffect;
         public StateBinding EffectBinding = new StateBinding(nameof(ItsEffect));
+        public Effect ItsEffect;
 
         internal Effector(Effect itsEffect)
         {
@@ -28,13 +28,9 @@ namespace ogtdglib.Effects
         public override void Update()
         {
             if (!ItsEffect.Decayed)
-            {
                 ItsEffect.Step();
-            }
             else
-            {
                 Level.Remove(this);
-            }
         }
     }
 }

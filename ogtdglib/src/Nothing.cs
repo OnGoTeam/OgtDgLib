@@ -5,11 +5,10 @@ namespace ogtdglib
 {
     /// <inheritdoc />
     /// <summary>
-    /// Empty thing
+    ///     Empty thing
     /// </summary>
     [PublicAPI]
-    public sealed class Nothing:Thing
+    public sealed class Nothing : Thing
     {
-        
     }
 }

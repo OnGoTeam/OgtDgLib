@@ -2,18 +2,17 @@
 
 namespace ogtdglib.Effects
 {
-
     /// <inheritdoc />
     /// <summary>
-    /// Applies LinkedStep on (at) _linkThing every Step until Decayed
+    ///     Applies LinkedStep on (at) _linkThing every Step until Decayed
     /// </summary>
-    public abstract class LinkedEffect:Effect
+    public abstract class LinkedEffect : Effect
     {
         private readonly Thing _linkThing;
 
         /// <inheritdoc />
         /// <summary>
-        /// LinkedEffect with Owner owner on (at) _linkThing linkThing
+        ///     LinkedEffect with Owner owner on (at) _linkThing linkThing
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="linkThing"></param>
@@ -24,7 +23,7 @@ namespace ogtdglib.Effects
 
         /// <inheritdoc />
         /// <summary>
-        /// Applies LinkedStep on (at) _linkThing if it's presented
+        ///     Applies LinkedStep on (at) _linkThing if it's presented
         /// </summary>
         protected sealed override void OnStep()
         {
@@ -33,11 +32,12 @@ namespace ogtdglib.Effects
                 Decayed = true;
                 return;
             }
+
             LinkedStep(_linkThing);
         }
 
         /// <summary>
-        /// Effect body is in LinkedStep which is applied on (at) _linkThing every Step
+        ///     Effect body is in LinkedStep which is applied on (at) _linkThing every Step
         /// </summary>
         /// <param name="linkThing"></param>
         protected abstract void LinkedStep(Thing linkThing);

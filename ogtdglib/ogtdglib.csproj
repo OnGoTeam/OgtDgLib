@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -49,17 +50,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AmmoTypes\BaseAmmoType.cs" />
-    <Compile Include="Effects\FrictionEffect.cs" />
-    <Compile Include="Effects\LinkedEffect.cs" />
-    <Compile Include="Nothing.cs" />
-    <Compile Include="Effects\Effect.cs" />
-    <Compile Include="Effects\Effector.cs" />
+    <Compile Include="src\AmmoTypes\BaseAmmoType.cs" />
+    <Compile Include="src\AmmoTypes\PseudoAT.cs" />
+    <Compile Include="src\Effects\FrictionEffect.cs" />
+    <Compile Include="src\Effects\LinkedEffect.cs" />
+    <Compile Include="src\MaterialDot.cs" />
+    <Compile Include="src\MaterialDotP.cs" />
+    <Compile Include="src\NoGun.cs" />
+    <Compile Include="src\Nothing.cs" />
+    <Compile Include="src\Effects\Effect.cs" />
+    <Compile Include="src\Effects\Effector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Effects\StopEffect.cs" />
+    <Compile Include="src\Effects\StopEffect.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

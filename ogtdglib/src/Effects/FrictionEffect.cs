@@ -4,15 +4,15 @@ namespace ogtdglib.Effects
 {
     /// <inheritdoc />
     /// <summary>
-    /// Effect which multiplies speed of _linkThing by _friction
+    ///     Effect which multiplies speed of _linkThing by _friction
     /// </summary>
-    public sealed class FrictionEffect:LinkedEffect
+    public sealed class FrictionEffect : LinkedEffect
     {
         private readonly float _friction;
 
         /// <inheritdoc />
         /// <summary>
-        /// FrictionEffect with Owner owner on (at) _linkThing linkThing by _friction friction
+        ///     FrictionEffect with Owner owner on (at) _linkThing linkThing by _friction friction
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="linkThing"></param>
@@ -24,7 +24,7 @@ namespace ogtdglib.Effects
 
         /// <inheritdoc />
         /// <summary>
-        /// Multiplies speed of _linkThing by _friction
+        ///     Multiplies speed of _linkThing by _friction
         /// </summary>
         /// <param name="linkThing"></param>
         protected override void LinkedStep(Thing linkThing)

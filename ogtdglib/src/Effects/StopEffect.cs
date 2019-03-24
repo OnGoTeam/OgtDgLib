@@ -4,17 +4,17 @@ namespace ogtdglib.Effects
 {
     /// <inheritdoc />
     /// <summary>
-    /// Effect which fixates _linkThing at its position until _ttd ticks applied (then decays)
+    ///     Effect which fixates _linkThing at its position until _ttd ticks applied (then decays)
     /// </summary>
-    public sealed class StopEffect:LinkedEffect
+    public sealed class StopEffect : LinkedEffect
     {
+        private readonly uint _ttd;
         private readonly float _x;
         private readonly float _y;
-        private readonly uint _ttd;
 
         /// <inheritdoc />
         /// <summary>
-        /// StopEffect with Owner owner, _linkThing linkThing and _ttd ttd
+        ///     StopEffect with Owner owner, _linkThing linkThing and _ttd ttd
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="linkThing"></param>
@@ -25,10 +25,10 @@ namespace ogtdglib.Effects
             _y = linkThing.y;
             _ttd = ttd;
         }
-        
+
         /// <inheritdoc />
         /// <summary>
-        /// Fixates _linkThing by stopping it (speed=0) and moving it to first position
+        ///     Fixates _linkThing by stopping it (speed=0) and moving it to first position
         /// </summary>
         /// <param name="linkThing"></param>
         protected override void LinkedStep(Thing linkThing)

@@ -4,10 +4,10 @@ using JetBrains.Annotations;
 namespace ogtdglib.AmmoTypes
 {
     /// <summary>
-    /// AmmoType with GetPath
+    ///     AmmoType with GetPath
     /// </summary>
     [PublicAPI]
-    public abstract class BaseAmmoType:AmmoType
+    public abstract class BaseAmmoType : AmmoType
     {
         private Nothing _nothing;
 
@@ -15,9 +15,9 @@ namespace ogtdglib.AmmoTypes
         {
             if (_nothing is null) _nothing = new Nothing();
         }
-        
+
         /// <summary>
-        /// Implements GetPath for AmmoType through Nothing.GetPath
+        ///     Implements GetPath for AmmoType through Nothing.GetPath
         /// </summary>
         /// <param name="asset"></param>
         /// <returns></returns>
