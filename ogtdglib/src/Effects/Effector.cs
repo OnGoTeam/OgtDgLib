@@ -1,7 +1,7 @@
 ﻿using DuckGame;
 using JetBrains.Annotations;
 
-namespace ogtdglib.Effects
+namespace OgtDgLib.Effects
 {
     [PublicAPI]
     internal sealed class Effector : Thing

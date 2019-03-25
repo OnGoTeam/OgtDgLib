@@ -1,6 +1,6 @@
 ﻿using DuckGame;
 
-namespace ogtdglib.Effects
+namespace OgtDgLib.Effects
 {
     /// <inheritdoc />
     /// <summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ogtdglib
+namespace OgtDgLib
 {
     /// <inheritdoc />
     public class ModUndefinedException:Exception

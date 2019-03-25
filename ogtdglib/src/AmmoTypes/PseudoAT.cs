@@ -1,7 +1,7 @@
 ﻿using DuckGame;
 using JetBrains.Annotations;
 
-namespace ogtdglib.AmmoTypes
+namespace OgtDgLib.AmmoTypes
 {
     // ReSharper disable once InconsistentNaming
     /// <inheritdoc />
@@ -9,13 +9,13 @@ namespace ogtdglib.AmmoTypes
     /// Expiremental AT used as stub where you have to use AT but it mustn't affect
     /// </summary>
     [PublicAPI]
-    public class PseudoAT : BaseAmmoType
+    public class PseudoAT<T> : BaseAmmoType<T> where T : Mod
     {
         /// <inheritdoc />
         /// <summary>
         /// Expiremental Pseudo-AmmoType
         /// </summary>
-        public PseudoAT(Mod mod) : base(mod)
+        public PseudoAT()
         {
             bulletThickness = 0f;
             bulletSpeed = 1e-10f;

@@ -1,7 +1,7 @@
 ﻿using DuckGame;
 using JetBrains.Annotations;
 
-namespace ogtdglib
+namespace OgtDgLib
 {
     /// <summary>
     /// Material equivalent to Nothing
