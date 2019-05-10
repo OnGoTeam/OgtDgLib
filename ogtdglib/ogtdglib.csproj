@@ -57,7 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ogtdglib.cs" />
     <Compile Include="src\AmmoTypes\BaseAmmoType.cs" />
     <Compile Include="src\AmmoTypes\PseudoAT.cs" />
     <Compile Include="src\Effects\FrictionEffect.cs" />

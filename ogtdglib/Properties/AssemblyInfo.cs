@@ -37,7 +37,7 @@ using System.Runtime.InteropServices;
 // DEBUG: main.additional.*
 // revision is exactly two symbols
 #if DEBUG
-    [assembly: AssemblyVersion("0.1.*")]
+    [assembly: AssemblyVersion("0.102.*")]
 #else
-[assembly: AssemblyVersion("0.102.*")]
+[assembly: AssemblyVersion("0.1.2.0")]
 #endif
