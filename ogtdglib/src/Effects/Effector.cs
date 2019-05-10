@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 namespace OgtDgLib.Effects
 {
     [PublicAPI]
-    internal sealed class Effector : Thing
+    internal sealed class Effector : IAutoUpdate
     {
         public StateBinding EffectBinding = new StateBinding(nameof(ItsEffect));
         public Effect ItsEffect;
@@ -12,12 +12,7 @@ namespace OgtDgLib.Effects
         internal Effector(Effect itsEffect)
         {
             ItsEffect = itsEffect;
-            owner = ItsEffect.Owner;
-        }
-
-        public override void Initialize()
-        {
-            Step();
+            AutoUpdatables.Add(this);
         }
 
         private void Step()
@@ -25,12 +20,10 @@ namespace OgtDgLib.Effects
             ItsEffect.Step();
         }
 
-        public override void Update()
+        public void Update()
         {
             if (!ItsEffect.Decayed)
-                ItsEffect.Step();
-            else
-                Level.Remove(this);
+                Step();
         }
     }
 }

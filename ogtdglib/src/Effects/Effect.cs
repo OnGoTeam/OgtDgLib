@@ -52,7 +52,7 @@ namespace OgtDgLib.Effects
         /// </summary>
         /// <param name="effect"></param>
         /// <returns></returns>
-        public static Thing Apply(Effect effect)
+        public static IAutoUpdate Apply(Effect effect)
         {
             return new Effector(effect);
         }
