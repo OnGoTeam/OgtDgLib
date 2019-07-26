@@ -1,4 +1,5 @@
-﻿using DuckGame;
+﻿using System;
+using DuckGame;
 using JetBrains.Annotations;
 
 namespace OgtDgLib.AmmoTypes
@@ -7,6 +8,7 @@ namespace OgtDgLib.AmmoTypes
     ///     AmmoType with GetPath
     /// </summary>
     [PublicAPI]
+    [Obsolete]
     public abstract class BaseAmmoType <T> : AmmoType where T:Mod
     {
         /// <summary>
@@ -18,5 +20,9 @@ namespace OgtDgLib.AmmoTypes
         {
             return Mod.GetPath<T>(asset);
         }
+    }
+    [PublicAPI]
+    public abstract class BaseAmmoType: AmmoType
+    {
     }
 }

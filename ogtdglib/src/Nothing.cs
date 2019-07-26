@@ -1,4 +1,5 @@
-﻿using DuckGame;
+﻿using System;
+using DuckGame;
 using JetBrains.Annotations;
 
 namespace OgtDgLib
@@ -8,6 +9,7 @@ namespace OgtDgLib
     ///     Empty thing with GetPath
     /// </summary>
     [PublicAPI]
+    [Obsolete]
     public sealed class Nothing <T> : Thing where T : Mod
     {
         /// <summary>
@@ -19,5 +21,10 @@ namespace OgtDgLib
         {
             return Mod.GetPath<T>(asset);
         }
+    }
+    [PublicAPI]
+    public sealed class Nothing : Thing
+    {
+
     }
 }
