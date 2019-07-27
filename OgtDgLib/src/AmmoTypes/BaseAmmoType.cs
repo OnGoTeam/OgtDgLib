@@ -28,6 +28,12 @@ namespace OgtDgLib.AmmoTypes
         public static BitBuffer SerializeAt(AmmoType at)
         {
             var b = new BitBuffer();
+            WriteFull(b, at);
+            return new BitBuffer(b.GetBytes());;
+        }
+
+        public static BitBuffer WriteFull(BitBuffer b, AmmoType at)
+        {
             b.Write(at.bulletSpeed);
             b.Write(at.speedVariation);
             b.Write(at.bulletLength);
@@ -44,13 +50,15 @@ namespace OgtDgLib.AmmoTypes
             b.Write(at.immediatelyDeadly);
             b.Write(at.weight);
             b.Write(at.combustable);
-            // TODO: bullettype
-            // TODO: COLOR
-            // binaryClassChunk.AddProperty("", );
-            return new BitBuffer(b.GetBytes());;
+            return b;
         }
 
         public static bool DeserializeAt(BitBuffer b, AmmoType at)
+        {
+            return ReadFull(b, at);
+        }
+
+        public static bool ReadFull(BitBuffer b, AmmoType at)
         {
             at.bulletSpeed = b.ReadFloat();
             at.speedVariation = b.ReadFloat();
@@ -68,8 +76,6 @@ namespace OgtDgLib.AmmoTypes
             at.immediatelyDeadly = b.ReadBool();
             at.weight = b.ReadFloat();
             at.combustable = b.ReadBool();
-            // TODO: COLOR
-            //  = node.GetProperty<>("");
             return true;
         }
     }
