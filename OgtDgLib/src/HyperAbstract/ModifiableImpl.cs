@@ -1,8 +1,11 @@
-﻿namespace OgtDgLib.HyperAbstract
+﻿using JetBrains.Annotations;
+
+namespace OgtDgLib.HyperAbstract
 {
     /// <summary>
     /// Implementation of <see cref="IModifiable"/> and <see cref="IModifier"/>
     /// </summary>
+    [PublicAPI]
     public static class ModifiableImpl
     {
         /// <summary>

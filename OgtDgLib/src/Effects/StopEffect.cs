@@ -1,4 +1,5 @@
 ﻿using DuckGame;
+using JetBrains.Annotations;
 
 namespace OgtDgLib.Effects
 {
@@ -6,6 +7,7 @@ namespace OgtDgLib.Effects
     /// <summary>
     ///     Effect which fixates _linkThing at its position until _ttd ticks applied (then decays)
     /// </summary>
+    [PublicAPI]
     public sealed class StopEffect : LinkedEffect
     {
         private readonly uint _ttd;

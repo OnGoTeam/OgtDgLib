@@ -1,4 +1,5 @@
 ﻿using DuckGame;
+using JetBrains.Annotations;
 
 namespace OgtDgLib.Effects
 {
@@ -6,6 +7,7 @@ namespace OgtDgLib.Effects
     /// <summary>
     ///     Effect which multiplies speed of _linkThing by _friction
     /// </summary>
+    [PublicAPI]
     public sealed class FrictionEffect : LinkedEffect
     {
         private readonly float _friction;
