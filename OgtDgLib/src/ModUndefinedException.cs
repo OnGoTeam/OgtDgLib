@@ -3,6 +3,7 @@
 namespace OgtDgLib
 {
     /// <inheritdoc />
+    [Obsolete]
     public class ModUndefinedException:Exception
     {
         /// <inheritdoc />
