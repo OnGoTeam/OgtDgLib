@@ -1,10 +1,11 @@
 ﻿using DuckGame;
 using JetBrains.Annotations;
+using OgtDgLib.AmmoTypes;
 
 namespace OgtDgLib
 {
     /// <summary>
-    /// Basic gun implementing framesync
+    /// Basic gun implementing framesync and ammoType serialization
     /// </summary>
     public abstract class BaseGun:Gun
     {
@@ -65,6 +66,13 @@ namespace OgtDgLib
             Smap = smap;
             _nonSkinFrames = nonSkinFrames;
             _graphic = Smap;
+        }
+
+        [UsedImplicitly]
+        public BitBuffer AmmoTypeSerialized
+        {
+            get => BaseAmmoType.SerializeAt(ammoType);
+            set => BaseAmmoType.DeserializeAt(value, ammoType);
         }
     }
 }

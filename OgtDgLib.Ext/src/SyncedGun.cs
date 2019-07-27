@@ -7,12 +7,7 @@ namespace OgtDgLib.Ext
 {
     public abstract class SyncedGun:TypedGun
     {
-        [UsedImplicitly]
-        public BitBuffer AmmoTypeSerialized
-        {
-            get => BaseAmmoType.SerializeAt(ammoType);
-            set => BaseAmmoType.DeserializeAt(value, ammoType);
-        }
+        
         [UsedImplicitly]
         public StateBinding AtsBinding = new StateBinding(nameof(AmmoTypeSerialized));
         protected SyncedGun(float xval, float yval, SpriteMap smap, int nonSkinFrames) : base(xval, yval, smap, nonSkinFrames)
