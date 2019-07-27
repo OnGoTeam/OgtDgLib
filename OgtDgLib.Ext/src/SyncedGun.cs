@@ -10,8 +10,8 @@ namespace OgtDgLib.Ext
         [UsedImplicitly]
         public BitBuffer AmmoTypeSerialized
         {
-            get => BaseAmmoType.SerializeAt(ammoType).Serialize();
-            set => BaseAmmoType.DeserializeAt(BinaryClassChunk.FromData<BinaryClassChunk>(value), ammoType);
+            get => BaseAmmoType.SerializeAt(ammoType);
+            set => BaseAmmoType.DeserializeAt(value, ammoType);
         }
         [UsedImplicitly]
         public StateBinding AtsBinding = new StateBinding(nameof(AmmoTypeSerialized));

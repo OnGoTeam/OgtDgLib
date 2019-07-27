@@ -25,50 +25,49 @@ namespace OgtDgLib.AmmoTypes
     [PublicAPI]
     public abstract class BaseAmmoType: AmmoType
     {
-        public static BinaryClassChunk SerializeAt(AmmoType at)
+        public static BitBuffer SerializeAt(AmmoType at)
         {
-            var binaryClassChunk = new BinaryClassChunk();
-            binaryClassChunk.AddProperty("bulletSpeed", at.bulletSpeed);
-            binaryClassChunk.AddProperty("speedVariation", at.speedVariation);
-            binaryClassChunk.AddProperty("bulletLength", at.bulletLength);
-            binaryClassChunk.AddProperty("bulletThickness", at.bulletThickness);
-            binaryClassChunk.AddProperty("deadly", at.deadly);
-            binaryClassChunk.AddProperty("impactPower", at.impactPower);
-            // binaryClassChunk.AddProperty("bulletType", at.bulletType);
-            binaryClassChunk.AddProperty("accuracy", at.accuracy);
-            binaryClassChunk.AddProperty("range", at.range);
-            binaryClassChunk.AddProperty("rangeVariation", at.rangeVariation);
-            binaryClassChunk.AddProperty("penetration", at.penetration);
-            binaryClassChunk.AddProperty("rebound", at.rebound);
-            binaryClassChunk.AddProperty("affectedByGravity", at.affectedByGravity);
-            binaryClassChunk.AddProperty("barrelAngleDegrees", at.barrelAngleDegrees);
-            binaryClassChunk.AddProperty("immediatelyDeadly", at.immediatelyDeadly);
-            binaryClassChunk.AddProperty("weight", at.weight);
-            binaryClassChunk.AddProperty("combustable", at.combustable);
+            var b = new BitBuffer();
+            b.Write(at.bulletSpeed);
+            b.Write(at.speedVariation);
+            b.Write(at.bulletLength);
+            b.Write(at.bulletThickness);
+            b.Write(at.deadly);
+            b.Write(at.impactPower);
+            b.Write(at.accuracy);
+            b.Write(at.range);
+            b.Write(at.rangeVariation);
+            b.Write(at.penetration);
+            b.Write(at.rebound);
+            b.Write(at.affectedByGravity);
+            b.Write(at.barrelAngleDegrees);
+            b.Write(at.immediatelyDeadly);
+            b.Write(at.weight);
+            b.Write(at.combustable);
+            // TODO: bullettype
             // TODO: COLOR
             // binaryClassChunk.AddProperty("", );
-            return binaryClassChunk;
+            return new BitBuffer(b.GetBytes());;
         }
 
-        public static bool DeserializeAt(BinaryClassChunk node, AmmoType at)
+        public static bool DeserializeAt(BitBuffer b, AmmoType at)
         {
-            at.bulletSpeed = node.GetProperty<float>("bulletSpeed");
-            at.speedVariation = node.GetProperty<float>("speedVariation");
-            at.bulletLength = node.GetProperty<float>("bulletLength");
-            at.bulletThickness = node.GetProperty<float>("bulletThickness");
-            at.deadly = node.GetProperty<bool>("deadly");
-            at.impactPower = node.GetProperty<float>("impactPower");
-            // at.bulletType = node.GetProperty<Type>("bulletType");
-            at.accuracy = node.GetProperty<float>("accuracy");
-            at.range = node.GetProperty<float>("range");
-            at.rangeVariation = node.GetProperty<float>("rangeVariation");
-            at.penetration = node.GetProperty<float>("penetration");
-            at.rebound = node.GetProperty<bool>("rebound");
-            at.affectedByGravity = node.GetProperty<bool>("affectedByGravity");
-            at.barrelAngleDegrees = node.GetProperty<float>("barrelAngleDegrees");
-            at.immediatelyDeadly = node.GetProperty<bool>("immediatelyDeadly");
-            at.weight = node.GetProperty<float>("weight");
-            at.combustable = node.GetProperty<bool>("combustable");
+            at.bulletSpeed = b.ReadFloat();
+            at.speedVariation = b.ReadFloat();
+            at.bulletLength = b.ReadFloat();
+            at.bulletThickness = b.ReadFloat();
+            at.deadly = b.ReadBool();
+            at.impactPower = b.ReadFloat();
+            at.accuracy = b.ReadFloat();
+            at.range = b.ReadFloat();
+            at.rangeVariation = b.ReadFloat();
+            at.penetration = b.ReadFloat();
+            at.rebound = b.ReadBool();
+            at.affectedByGravity = b.ReadBool();
+            at.barrelAngleDegrees = b.ReadFloat();
+            at.immediatelyDeadly = b.ReadBool();
+            at.weight = b.ReadFloat();
+            at.combustable = b.ReadBool();
             // TODO: COLOR
             //  = node.GetProperty<>("");
             return true;
