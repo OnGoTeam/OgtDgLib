@@ -22,6 +22,9 @@ namespace OgtDgLib
             return Mod.GetPath<T>(asset);
         }
     }
+    /// <summary>
+    /// Empty Thing for some purposes
+    /// </summary>
     [PublicAPI]
     public sealed class Nothing : Thing
     {

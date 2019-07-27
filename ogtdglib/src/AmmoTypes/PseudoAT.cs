@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if DEBUG
+using System;
 using DuckGame;
 using JetBrains.Annotations;
 
@@ -60,3 +61,4 @@ namespace OgtDgLib.AmmoTypes
         }
     }
 }
+#endif
