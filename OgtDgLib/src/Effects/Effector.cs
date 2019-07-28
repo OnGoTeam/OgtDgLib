@@ -6,7 +6,6 @@ namespace OgtDgLib.Effects
     [PublicAPI]
     internal sealed class Effector : IAutoUpdate
     {
-        public StateBinding EffectBinding = new StateBinding(nameof(ItsEffect));
         public Effect ItsEffect;
 
         internal Effector(Effect itsEffect)
