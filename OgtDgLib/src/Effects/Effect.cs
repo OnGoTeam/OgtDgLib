@@ -7,7 +7,7 @@ namespace OgtDgLib.Effects
     ///     Applies OnStep every Step until Decayed
     /// </summary>
     [PublicAPI]
-    public abstract class Effect
+    public abstract class Effect: IAutoUpdate
     {
         /// <summary>
         ///     Effect with Owner owner
@@ -16,6 +16,7 @@ namespace OgtDgLib.Effects
         protected Effect(Thing owner)
         {
             Owner = owner;
+            AutoUpdatables.Add(this);
         }
 
         /// <summary>
@@ -47,14 +48,10 @@ namespace OgtDgLib.Effects
         /// </summary>
         protected abstract void OnStep();
 
-        /// <summary>
-        ///     Returns Effector corresponding to your Effect which calls Step every Update
-        /// </summary>
-        /// <param name="effect"></param>
-        /// <returns></returns>
-        public static IAutoUpdate Apply(Effect effect)
+        /// <inheritdoc />
+        public void Update()
         {
-            return new Effector(effect);
+            if (!Decayed) Step();
         }
     }
 }

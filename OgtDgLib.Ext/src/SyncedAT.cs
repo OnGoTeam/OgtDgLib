@@ -1,4 +1,5 @@
-﻿using DuckGame;
+﻿#if DEBUG
+using DuckGame;
 using OgtDgLib.AmmoTypes;
 
 namespace OgtDgLib.Ext
@@ -19,3 +20,4 @@ namespace OgtDgLib.Ext
         }
     }
 }
+#endif

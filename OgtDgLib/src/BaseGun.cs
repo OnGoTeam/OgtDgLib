@@ -1,6 +1,8 @@
 ﻿using DuckGame;
 using JetBrains.Annotations;
+#if DEBUG
 using OgtDgLib.AmmoTypes;
+#endif
 
 namespace OgtDgLib
 {
@@ -67,11 +69,13 @@ namespace OgtDgLib
             _nonSkinFrames = nonSkinFrames;
             _graphic = Smap;
         }
-
+#if DEBUG
         protected BitBuffer AmmoTypeSerialized
         {
             get => BaseAmmoType.SerializeAt(ammoType);
             set => BaseAmmoType.DeserializeAt(value, ammoType);
         }
+#endif
+
     }
 }
