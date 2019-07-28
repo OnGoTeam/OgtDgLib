@@ -60,10 +60,6 @@
     <Compile Include="src\BaseGun.cs" />
     <Compile Include="src\Effects\FrictionEffect.cs" />
     <Compile Include="src\Effects\LinkedEffect.cs" />
-    <Compile Include="src\HyperAbstract\IDefaultModifier.cs" />
-    <Compile Include="src\HyperAbstract\IModifiable.cs" />
-    <Compile Include="src\HyperAbstract\IModifier.cs" />
-    <Compile Include="src\HyperAbstract\ModifiableImpl.cs" />
     <Compile Include="src\MaterialDot.cs" />
     <Compile Include="src\MaterialDotP.cs" />
     <Compile Include="src\ModUndefinedException.cs" />

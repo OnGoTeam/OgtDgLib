@@ -29,7 +29,7 @@ namespace OgtDgLib.AmmoTypes
         {
             var b = new BitBuffer();
             WriteFull(b, at);
-            return new BitBuffer(b.GetBytes());;
+            return new BitBuffer(b.GetBytes());
         }
 
         public static BitBuffer WriteFull(BitBuffer b, AmmoType at)
@@ -50,6 +50,10 @@ namespace OgtDgLib.AmmoTypes
             b.Write(at.immediatelyDeadly);
             b.Write(at.weight);
             b.Write(at.combustable);
+            b.Write(at.bulletColor.r);
+            b.Write(at.bulletColor.g);
+            b.Write(at.bulletColor.b);
+            b.Write(at.bulletColor.a);
             return b;
         }
 
@@ -76,6 +80,10 @@ namespace OgtDgLib.AmmoTypes
             at.immediatelyDeadly = b.ReadBool();
             at.weight = b.ReadFloat();
             at.combustable = b.ReadBool();
+            at.bulletColor.r = b.ReadByte();
+            at.bulletColor.g = b.ReadByte();
+            at.bulletColor.b = b.ReadByte();
+            at.bulletColor.a = b.ReadByte();
             return true;
         }
     }

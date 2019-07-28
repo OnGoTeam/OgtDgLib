@@ -68,8 +68,7 @@ namespace OgtDgLib
             _graphic = Smap;
         }
 
-        [UsedImplicitly]
-        public BitBuffer AmmoTypeSerialized
+        protected BitBuffer AmmoTypeSerialized
         {
             get => BaseAmmoType.SerializeAt(ammoType);
             set => BaseAmmoType.DeserializeAt(value, ammoType);
